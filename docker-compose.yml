@@ -1,0 +1,13 @@
+---
+version: "2"
+services:
+  xonotic:
+    #build: .
+    image: itom34/xonotic:latest
+    container_name: xonotic
+    volumes:
+      - ./server.cfg:/root/.xonotic/data/server.cfg
+    ports:
+      - 26000:26000/udp
+      - 26000:26000/tcp
+    restart: unless-stopped
